@@ -1,8 +1,8 @@
 <idea-plugin>
-    <id>com.foryou.plugin.mvvm</id>
+    <id>com.golaxy.plugin.mvvm</id>
     <name>GolaxyHelper</name>
     <version>0.1.0</version>
-    <vendor email="664503417@qq.com" url="https://gitlab.fuyoukache.com/android-component-tools/FYHelper">FORYOU</vendor>
+    <vendor email="694177407@qq.com" url="https://github.com/chsring/GolaxyMvvmHelper.gitr">FORYOU</vendor>
 
     <description><![CDATA[
       Plugin for generate fy mvvm code template.
