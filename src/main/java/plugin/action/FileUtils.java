@@ -18,7 +18,7 @@ public class FileUtils {
      */
     public static String getBaseDirPath(AnActionEvent event) {
         String path = DataKeys.VIRTUAL_FILE.getData(event.getDataContext()).getPath();
-        if (path != null && path.contains("/src/main/java/")) {
+        if (path != null && path.contains("/src/main/java")) {
             String baseDirPath = path;
             if (new File(path).isFile()) {
                 baseDirPath = path.substring(0, path.lastIndexOf("/"));
@@ -37,6 +37,7 @@ public class FileUtils {
      * @return
      */
     public static String getTemplateFileContent(Class cls,String path) {
+        System.out.println(path);
         InputStream in = null;
         in = cls.getResourceAsStream(path);
         String content = "";

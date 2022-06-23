@@ -1,8 +1,8 @@
 <idea-plugin>
-    <id>com.golaxy.plugin.mvvm</id>
+    <id>cplugin.mvvm</id>
     <name>GolaxyHelper</name>
     <version>0.1.0</version>
-    <vendor email="694177407@qq.com" url="https://github.com/chsring/GolaxyMvvmHelper.gitr">FORYOU</vendor>
+    <vendor email="694177407@qq.com" url="https://github.com/chsring/GolaxyMvvmHelper.gitr">Golaxy</vendor>
 
     <description><![CDATA[
       Plugin for generate fy mvvm code template.

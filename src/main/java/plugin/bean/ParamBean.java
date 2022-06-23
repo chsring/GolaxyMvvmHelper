@@ -24,51 +24,51 @@ public class ParamBean {
         this.type = type;
         switch (type) {
             case TypeContant.JAVA_NORMAL_ACTIVITY:
-                this.tempDir = "/template/jnormal/";
+                this.tempDir = "/jnormal/";
                 this.tempFiles = TemplateUtils.jNormalActivityFiles;
                 break;
             case TypeContant.JAVA_NORMAL_FRAGMENT:
-                this.tempDir = "/template/jnormal/";
+                this.tempDir = "/jnormal/";
                 this.tempFiles = TemplateUtils.jNormalFragmentyFiles;
                 break;
             case TypeContant.JAVA_LIST_ACTIVITY:
-                this.tempDir = "/template/jlist/";
+                this.tempDir = "/jlist/";
                 this.tempFiles = TemplateUtils.jListActivityFiles;
                 break;
             case TypeContant.JAVA_LIST_FRAGMENT:
-                this.tempDir = "/template/jlist/";
+                this.tempDir = "/jlist/";
                 this.tempFiles = TemplateUtils.jListFragmentFiles;
                 break;
             case TypeContant.JAVA_PAGING_ACTIVITY:
-                this.tempDir = "/template/jpaging/";
+                this.tempDir = "/jpaging/";
                 this.tempFiles = TemplateUtils.jPagingActivityFiles;
                 break;
             case TypeContant.JAVA_PAGING_FRAGMENT:
-                this.tempDir = "/template/jpaging/";
+                this.tempDir = "/jpaging/";
                 this.tempFiles = TemplateUtils.jPagingFragmentFiles;
                 break;
             case TypeContant.KOTLIN_NORMAL_ACTIVITY:
-                this.tempDir = "/template/knormal/";
+                this.tempDir = "/knormal/";
                 this.tempFiles = TemplateUtils.kNormalActivityFiles;
                 break;
             case TypeContant.KOTLIN_NORMAL_FRAGMENT:
-                this.tempDir = "/template/knormal/";
+                this.tempDir = "/knormal/";
                 this.tempFiles = TemplateUtils.kNormalFragmentyFiles;
                 break;
             case TypeContant.KOTLIN_LIST_ACTIVITY:
-                this.tempDir = "/template/klist/";
+                this.tempDir = "/klist/";
                 this.tempFiles = TemplateUtils.kListActivityFiles;
                 break;
             case TypeContant.KOTLIN_LIST_FRAGMENT:
-                this.tempDir = "/template/klist/";
+                this.tempDir = "/klist/";
                 this.tempFiles = TemplateUtils.kListFragmentFiles;
                 break;
             case TypeContant.KOTLIN_PAGING_ACTIVITY:
-                this.tempDir = "/template/kpaging/";
+                this.tempDir = "/kpaging/";
                 this.tempFiles = TemplateUtils.kPagingActivityFiles;
                 break;
             case TypeContant.KOTLIN_PAGING_FRAGMENT:
-                this.tempDir = "/template/kpaging/";
+                this.tempDir = "/kpaging/";
                 this.tempFiles = TemplateUtils.kPagingFragmentFiles;
                 break;
         }

@@ -40,7 +40,7 @@ public class MvvmAction extends AnAction {
                 String sonDirPath = TemplateUtils.getSonDirPath(param.baseDirPath, param.createPackName, templateFileName);
                 if (sonDirPath == null) continue;
                 //获取模板文件内容
-                param.templateContent = FileUtils.getTemplateFileContent(this.getClass(), param.tempDir + templateFileName);
+                param.templateContent = FileUtils.getTemplateFileContent(this.getClass(), (param.tempDir + templateFileName).replace("/template/",""));
                 //获取对应类的包名
                 param.classPackageName = TemplateUtils.getClassPackageName(sonDirPath);
                 //替换模板中约定内容
