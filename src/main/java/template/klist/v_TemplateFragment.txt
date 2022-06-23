@@ -1,0 +1,64 @@
+package $ClassPackageName
+
+import android.arch.lifecycle.Observer
+import android.os.Bundle
+import android.view.View
+import com.foryou.coreui.baseui.MvvMBaseFragment
+import $ModulePackName.R
+import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding
+import $V_VMPackageName.$ClassPrefixViewModel
+import com.foryou.corelib.util.ToastUtils
+import com.foryou.coreui.adapter.FYBaseRLAdapter
+import com.scwang.smartrefresh.layout.api.RefreshLayout
+import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
+
+
+class $ClassPrefixFragment:MvvMBaseFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel>() , FYBaseRLAdapter.OnLoadRefreshFinish{
+
+    companion object {
+        fun newInstance(orderSn: String): $ClassPrefixFragment {
+           /* val args = Bundle()
+              args.putString("orderSn", orderSn)
+              val fragment = KmRecordFragment()
+              fragment.arguments = args
+              return fragment*/
+            return $ClassPrefixFragment()
+        }
+    }
+
+    override fun getLayoutId(): Int {
+       return R.layout.$LayoutPrefix_fragment_$LayoutSuffix
+    }
+
+    override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState);
+        val adapter = $ClassPrefixAdapter(context)
+        adapter.setOnLoadRefreshFinish(this)
+        dataBinding.recyclerView.adapter=adapter
+        dataBinding.srlRefreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
+            override fun onLoadMore(refreshLayout: RefreshLayout) {
+                adapter.loadMore { pageIndex, pageSize ->
+                    viewModel.get$MethodName(pageSize, pageIndex)
+                }
+            }
+            override fun onRefresh(refreshLayout: RefreshLayout) {
+                adapter.refresh { pageIndex, pageSize ->
+                    viewModel.get$MethodName(pageSize, pageIndex)
+                }
+            }
+        })
+        viewModel.liveData.observe(this, Observer {
+             if(it != null && !it.isEmpty()){
+                 adapter.addRLData(it);
+             }else{
+                 adapter.recoverFactor();
+             }
+        })
+        viewModel.get$MethodName(adapter.pageSize, adapter.pageIndex);
+    }
+
+    override fun onLoadFreshFinish() {
+        dataBinding.srlRefreshLayout.finishLoadMore();
+        dataBinding.srlRefreshLayout.finishRefresh();
+    }
+}

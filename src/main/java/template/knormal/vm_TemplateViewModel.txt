@@ -1,0 +1,34 @@
+package $ClassPackageName
+
+import android.app.Application
+import android.arch.lifecycle.MutableLiveData
+import com.foryou.coreui.baseui.BaseViewModel
+import com.foryou.net.base.BaseDataSource
+import com.foryou.corelib.util.ToastUtils
+import $VM_MPackageName.$ClassPrefixEntity
+import $VM_MPackageName.$ClassPrefixRepository
+
+class $ClassPrefixViewModel(application: Application) : BaseViewModel(application) {
+
+    private val repository by lazy { $ClassPrefixRepository() }
+
+    internal val liveData by lazy { MutableLiveData<$ClassPrefixEntity.DataBean>() }
+
+    fun get$MethodName() {
+        repository.get$MethodName(object : BaseDataSource.GetTaskCallback<$ClassPrefixEntity> {
+              override fun onTaskLoaded(task: $ClassPrefixEntity?) {
+                  task?.data?.let {
+                      if (task.data.isNotEmpty()) {
+                          liveData.value = task.data[0]
+                      } else {
+                          onDataNotAvailable(0, "未获取到数据")
+                      }
+                  } ?: onDataNotAvailable(0, "未获取到数据")
+              }
+
+              override fun onDataNotAvailable(code: Int, desc: String?) {
+                  ToastUtils.toastShort(desc)
+              }
+         })
+     }
+}

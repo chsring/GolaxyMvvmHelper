@@ -1,0 +1,16 @@
+package $ClassPackageName
+
+import $ClassPackageName.$ClassPrefixEntity
+import java.util.WeakHashMap
+import io.reactivex.Observable
+import retrofit2.http.FieldMap
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.POST
+
+interface $ClassPrefixService {
+
+    @FormUrlEncoded
+    @POST("") //TODO add url
+    fun get$MethodName(@FieldMap params: WeakHashMap<String, Any>): Observable<$ClassPrefixEntity>
+
+}

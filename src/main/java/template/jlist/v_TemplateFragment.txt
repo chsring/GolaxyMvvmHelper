@@ -1,0 +1,71 @@
+package $ClassPackageName;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.View;
+import com.foryou.coreui.baseui.MvvMBaseFragment;
+import $ModulePackName.R;
+import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding;
+import $V_VMPackageName.$ClassPrefixViewModel;
+import com.foryou.corelib.util.ToastUtils;
+import com.foryou.coreui.adapter.FYBaseRLAdapter;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
+
+public class $ClassPrefixFragment extends MvvMBaseFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel> implements FYBaseRLAdapter.OnLoadRefreshFinish{
+
+    public static $ClassPrefixFragment newInstance() {
+         /**
+          * params eg:
+          *Bundle args = new Bundle();
+          *args.putString("key","value");
+          *$ClassPrefixFragment fragment = new $ClassPrefixFragment();
+          *fragment.setArguments(args);
+          *return fragment;
+          */
+        return new $ClassPrefixFragment();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.$LayoutPrefix_fragment_$LayoutSuffix;
+    }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        $ClassPrefixAdapter adapter = new $ClassPrefixAdapter(getContext());
+        adapter.setOnLoadRefreshFinish(this);
+        dataBinding.recyclerView.setAdapter(adapter);
+        dataBinding.srlRefreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
+              @Override
+              public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                  adapter.loadMore((pageIndex, pageSize) -> viewModel.get$MethodName(pageSize, pageIndex));
+              }
+
+              @Override
+              public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                  adapter.refresh((pageIndex, pageSize) -> viewModel.get$MethodName(pageSize, pageIndex));
+
+              }
+        });
+        viewModel.getLiveData().observe(this, data -> {
+             if(data != null && !data.isEmpty()){
+                 adapter.addRLData(data);
+             }else{
+                 adapter.recoverFactor();
+             }
+        });
+        viewModel.get$MethodName(adapter.pageSize, adapter.pageIndex);
+    }
+
+    @Override
+    public void onLoadFreshFinish() {
+        dataBinding.srlRefreshLayout.finishLoadMore();
+        dataBinding.srlRefreshLayout.finishRefresh();
+    }
+}

@@ -1,0 +1,50 @@
+package $ClassPackageName
+
+import android.arch.lifecycle.Observer
+import android.os.Bundle
+import com.foryou.coreui.baseui.MvvMBaseActivity
+import $ModulePackName.R
+import $ModulePackName.databinding.$BindingPrefixActivity$BindingMiddleBinding
+import $V_VMPackageName.$ClassPrefixViewModel
+import com.foryou.corelib.util.ToastUtils
+import com.foryou.coreui.adapter.FYBaseRLAdapter
+import com.scwang.smartrefresh.layout.api.RefreshLayout
+import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
+
+class $ClassPrefixActivity: MvvMBaseActivity<$BindingPrefixActivity$BindingMiddleBinding, $ClassPrefixViewModel>() , FYBaseRLAdapter.OnLoadRefreshFinish {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.$LayoutPrefix_activity_$LayoutSuffix)
+        setTitle("")//TODO
+        val adapter = $ClassPrefixAdapter(this)
+        adapter.setOnLoadRefreshFinish(this)
+        dataBinding.recyclerView.adapter=adapter
+        dataBinding.srlRefreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
+            override fun onLoadMore(refreshLayout: RefreshLayout) {
+                adapter.loadMore { pageIndex, pageSize ->
+                    viewModel.get$MethodName(pageSize, pageIndex)
+                }
+            }
+
+            override fun onRefresh(refreshLayout: RefreshLayout) {
+                adapter.refresh { pageIndex, pageSize ->
+                    viewModel.get$MethodName(pageSize, pageIndex)
+                }
+            }
+        })
+        viewModel.liveData.observe(this, Observer {
+             if(it != null && !it.isEmpty()){
+                 adapter.addRLData(it);
+             }else{
+                 adapter.recoverFactor();
+             }
+        })
+        viewModel.get$MethodName(adapter.pageSize, adapter.pageIndex);
+    }
+
+   override fun onLoadFreshFinish() {
+        dataBinding.srlRefreshLayout.finishLoadMore();
+        dataBinding.srlRefreshLayout.finishRefresh();
+    }
+}

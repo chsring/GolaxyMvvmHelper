@@ -1,0 +1,14 @@
+package $ClassPackageName;
+
+import com.foryou.corelib.entity.FoYoBaseEntity;
+import java.util.List;
+
+
+public class $ClassPrefixEntity extends FoYoBaseEntity {
+
+    public List<DataBean> data;
+
+    public static class DataBean {
+
+    }
+}

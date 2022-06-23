@@ -1,0 +1,25 @@
+package $ClassPackageName;
+
+import $ClassPackageName.$ClassPrefixEntity;
+import $ClassPackageName.$ClassPrefixService;
+import $ClassPackageName.$ClassPrefixDataSource;
+import com.foryou.net.FoYoNet;
+import com.foryou.net.base.BaseDataSource;
+import com.foryou.net.callback.ISuccess;
+import com.foryou.net.http.IMethod;
+
+public class $ClassPrefixRemoteDataSource implements $ClassPrefixDataSource {
+
+    @Override
+    public void get$MethodName(int pageSize, int pageIndex,BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
+        FoYoNet.builder()
+                .params("pageSize", pageSize)
+                .params("pageIndex", pageIndex)
+                .service($ClassPrefixService.class)
+                .method((IMethod<$ClassPrefixService>) $ClassPrefixService::get$MethodName)
+                .success((ISuccess<$ClassPrefixEntity>) callback::onTaskLoaded)
+                .failure((callback::onDataNotAvailable))
+                .build()
+                .excute();
+    }
+}

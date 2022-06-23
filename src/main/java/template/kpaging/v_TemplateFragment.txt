@@ -1,0 +1,51 @@
+package $ClassPackageName
+
+import android.os.Bundle
+import android.support.annotation.Nullable
+import android.view.View
+import com.foryou.coreui.baseui.MvvMBaseFragment
+import $ModulePackName.R
+import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding
+import $V_VMPackageName.$ClassPrefixViewModel
+import com.foryou.corelib.util.ToastUtils
+import com.foryou.coreui.paging.ResponseStatus
+
+
+class $ClassPrefixFragment : MvvMBaseFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel>() {
+
+    companion object {
+       fun newInstance(orderSn: String): $ClassPrefixFragment {
+          /* val args = Bundle()
+             args.putString("orderSn", orderSn)
+             val fragment = KmRecordFragment()
+             fragment.arguments = args
+             return fragment*/
+           return $ClassPrefixFragment()
+       }
+    }
+
+
+    override fun getLayoutId(): Int {
+       return R.layout.$LayoutPrefix_fragment_$LayoutSuffix
+    }
+
+
+    override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adapter = $ClassPrefixAdapter()
+        dataBinding.recyclerView.adapter = adapter
+        dataBinding.srlRefreshLayout.setOnRefreshListener { viewModel.refresh() }
+        viewModel.bindPaging(adapter) { status ->
+            dataBinding.srlRefreshLayout.setRefreshing(false)
+            if (status.type == ResponseStatus.FIRST_PAGE_EMPTY) {
+
+            } else if (status.type == ResponseStatus.FIRST_PAGE_FAILURE) {
+
+            } else {
+                ToastUtils.toastShort(status.msg);
+            }
+        }
+        viewModel.get$MethodName()
+    }
+
+}

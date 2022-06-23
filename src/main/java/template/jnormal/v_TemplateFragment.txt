@@ -1,0 +1,42 @@
+package $ClassPackageName;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.View;
+import com.srwing.coreui.MvvmBindingFragment;
+import $ModulePackName.R;
+import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding;
+import $V_VMPackageName.$ClassPrefixViewModel;
+
+public class $ClassPrefixFragment extends MvvMBaseFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel> {
+
+    public static $ClassPrefixFragment newInstance() {
+         /**
+          * params eg:
+          *Bundle args = new Bundle();
+          *args.putString("key","value");
+          *$ClassPrefixFragment fragment = new $ClassPrefixFragment();
+          *fragment.setArguments(args);
+          *return fragment;
+          */
+        return new $ClassPrefixFragment();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.$LayoutPrefix_fragment_$LayoutSuffix;
+    }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        viewModel.getLiveData().observe(this, data -> {
+            if (data == null) return;
+            dataBinding.setBean(data);
+            // TODO
+        });
+        viewModel.get$MethodName();
+    }
+
+}

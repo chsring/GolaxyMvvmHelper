@@ -1,0 +1,24 @@
+package $ClassPackageName
+
+import com.foryou.coreui.paging.BaseDataSource
+import com.foryou.coreui.paging.PagingBasePageDataSource
+import com.foryou.net.FoYoNet
+import com.foryou.net.callback.ISuccess
+import com.foryou.net.http.IMethod
+import $ClassPackageName.$ClassPrefixEntity
+import $ClassPackageName.$ClassPrefixService
+
+class $ClassPrefixRemoteDataSource : PagingBasePageDataSource<$ClassPrefixEntity.DataBean>() {
+
+   override fun loadData(pageIndex: Int, pageSize: Int,callback: BaseDataSource.GetTaskCallback<List<$ClassPrefixEntity.DataBean>>) {
+        FoYoNet.builder()
+            .params("pageSize", pageSize)
+            .params("pageIndex", pageIndex)
+            .service($ClassPrefixService::class.java)
+            .method{ service, params -> (service as $ClassPrefixService).get$MethodName(params) }
+            .success(ISuccess<$ClassPrefixEntity> { callback.onTaskLoaded(it.data) })
+            .failure(IFailure { code, desc -> callback.onDataNotAvailable(code, desc) })
+            .build()
+            .excute()
+    }
+}

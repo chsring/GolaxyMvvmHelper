@@ -1,0 +1,19 @@
+package $ClassPackageName
+
+import com.foryou.coreui.paging.PagingBaseAdapter
+import $V_MPackageName.$ClassPrefixEntity
+import $ModulePackName.R
+import $ModulePackName.databinding.$BindingPrefixItem$BindingMiddleBinding
+
+
+class $ClassPrefixAdapter : PagingBaseAdapter<$ClassPrefixEntity.DataBean, $BindingPrefixItem$BindingMiddleBinding>() {
+
+    override fun providerItemLayoutId() :Int {
+        return R.layout.$LayoutPrefix_item_$LayoutSuffix;
+    }
+
+    override fun bind(binding: $BindingPrefixItem$BindingMiddleBinding, item: $ClassPrefixEntity.DataBean, position: Int) {
+        binding.item=item
+        //TODO  insert you code
+    }
+}

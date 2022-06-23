@@ -1,0 +1,9 @@
+package $ClassPackageName
+
+import com.foryou.corelib.entity.FoYoBaseEntity
+
+data class $ClassPrefixEntity(val data: List<DataBean>?) : FoYoBaseEntity() {
+
+     data class DataBean(val param:String)
+
+}

@@ -1,0 +1,23 @@
+package $ClassPackageName;
+
+import $ClassPackageName.$ClassPrefixEntity;
+import $ClassPackageName.$ClassPrefixService;
+import $ClassPackageName.$ClassPrefixDataSource;
+import com.srwing.t_network.GxyNet;
+import com.srwing.t_network.base.BaseDataSource;
+import com.srwing.t_network.callback.ISuccess;
+import com.srwing.t_network.http.IMethod;
+
+public class $ClassPrefixRemoteDataSource implements $ClassPrefixDataSource {
+
+    @Override
+    public void get$MethodName(BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
+        GxyNet.builder()
+                .service($ClassPrefixService.class)
+                .method((IMethod<$ClassPrefixService>) $ClassPrefixService::get$MethodName)
+                .success((ISuccess<$ClassPrefixEntity>) callback::onTaskLoaded)
+                .failure((callback::onDataNotAvailable))
+                .build()
+                .excute();
+    }
+}

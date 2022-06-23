@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.foryou.plugin.mvvm</id>
+    <name>GolaxyHelper</name>
+    <version>0.1.0</version>
+    <vendor email="664503417@qq.com" url="https://gitlab.fuyoukache.com/android-component-tools/FYHelper">FORYOU</vendor>
+
+    <description><![CDATA[
+      Plugin for generate fy mvvm code template.
+    ]]></description>
+
+    <change-notes><![CDATA[
+        0.1.0 Support Generate java code template
+    ]]>
+    </change-notes>
+    <idea-version since-build="173.0"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+
+        <!-- Add your actions here -->
+        <action id="GolaxyHelper.MvvmPlugin" class="plugin.action.MvvmAction" text="GolaxyHelper"
+                description="GenerateMvvmAction">
+            <!--      <add-to-group group-id="CodeMenu" anchor="first"/>-->
+            <!--      <add-to-group group-id="GenerateGroup" anchor="first"/>-->
+            <!--      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift U"/>-->
+            <!--      <add-to-group group-id="NewGroup" anchor="first"/>-->
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        </action>
+        <!--    <action id="a" class="com.foryou.plugin.action.b" text="c" description="d">-->
+        <!--      <add-to-group group-id="NewGroup" anchor="first"/>-->
+        <!--    </action>-->
+    </actions>
+    <depends>com.intellij.modules.java</depends>
+
+</idea-plugin>

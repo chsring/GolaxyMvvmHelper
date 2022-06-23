@@ -1,0 +1,24 @@
+package $ClassPackageName
+
+import android.arch.lifecycle.Observer
+import android.os.Bundle
+import com.foryou.coreui.baseui.MvvMBaseActivity
+import $ModulePackName.R
+import $ModulePackName.databinding.$BindingPrefixActivity$BindingMiddleBinding
+import $V_VMPackageName.$ClassPrefixViewModel
+
+class $ClassPrefixActivity: MvvMBaseActivity<$BindingPrefixActivity$BindingMiddleBinding, $ClassPrefixViewModel>() {
+
+     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.$LayoutPrefix_activity_$LayoutSuffix);
+        setTitle("");//TODO  somethings
+        viewModel.liveData.observe(this, Observer {
+            dataBinding.bean = it
+            it?.apply {
+                // TODO  somethings
+            }
+        })
+        viewModel.get$MethodName();
+    }
+}

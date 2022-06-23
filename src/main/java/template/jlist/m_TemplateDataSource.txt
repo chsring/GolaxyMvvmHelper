@@ -1,0 +1,11 @@
+package $ClassPackageName;
+
+import $ClassPackageName.$ClassPrefixEntity;
+import com.foryou.net.base.BaseDataSource;
+
+
+interface $ClassPrefixDataSource {
+
+    void get$MethodName(int pageSize, int pageIndex, BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback);
+
+}

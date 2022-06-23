@@ -1,0 +1,25 @@
+package $ClassPackageName;
+
+import com.foryou.coreui.paging.PagingBaseAdapter;
+import $V_MPackageName.$ClassPrefixEntity;
+import $ModulePackName.R;
+import $ModulePackName.databinding.$BindingPrefixItem$BindingMiddleBinding;
+
+
+public class $ClassPrefixAdapter extends PagingBaseAdapter<$ClassPrefixEntity.DataBean, $BindingPrefixItem$BindingMiddleBinding> {
+
+    public $ClassPrefixAdapter() {
+        super();
+    }
+
+    @Override
+    protected int providerItemLayoutId() {
+        return R.layout.$LayoutPrefix_item_$LayoutSuffix;
+    }
+
+    @Override
+    protected void bind($BindingPrefixItem$BindingMiddleBinding binding, $ClassPrefixEntity.DataBean item, int position) {
+        binding.setItem(item);
+        //TODO  insert you code
+    }
+}

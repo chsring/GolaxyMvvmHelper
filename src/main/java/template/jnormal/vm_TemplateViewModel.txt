@@ -1,0 +1,46 @@
+package $ClassPackageName;
+
+import android.app.Application;
+
+import android.support.annotation.NonNull;
+import android.arch.lifecycle.MutableLiveData;
+
+import com.srwing.coreui.BaseViewModel;
+import com.srwing.t_network.base.BaseDataSource;
+
+import com.blankj.utilcode.util.ToastUtils;
+
+import $VM_MPackageName.$ClassPrefixEntity;
+import $VM_MPackageName.$ClassPrefixRepository;
+
+public class $ClassPrefixViewModel extends BaseViewModel {
+
+     private $ClassPrefixRepository repository;
+
+     private MutableLiveData<$ClassPrefixEntity.DataBean> liveData = new MutableLiveData<>();
+
+     public MutableLiveData<$ClassPrefixEntity.DataBean> getLiveData() {
+            return liveData;
+      }
+
+    public $ClassPrefixViewModel(@NonNull Application application) {
+        super(application);
+        repository = new $ClassPrefixRepository();
+    }
+
+    public void get$MethodName() {
+        repository.get$MethodName(new BaseDataSource.GetTaskCallback<$ClassPrefixEntity>(){
+               @Override
+               public void onTaskLoaded($ClassPrefixEntity task) {
+                   if (task.status.code == 0 && task.data != null && !task.data.isEmpty()) {
+                       liveData.setValue(task.data.get(0));
+                   }
+               }
+               @Override
+               public void onDataNotAvailable(int code, String desc) {
+                   ToastUtils.showShort(desc);
+               }
+        });
+     }
+
+}

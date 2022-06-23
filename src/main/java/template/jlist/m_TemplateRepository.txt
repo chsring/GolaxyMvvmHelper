@@ -1,0 +1,19 @@
+package $ClassPackageName;
+
+import $ClassPackageName.$ClassPrefixEntity;
+import $ClassPackageName.$ClassPrefixDataSource;
+import com.foryou.net.base.BaseDataSource;
+
+public class $ClassPrefixRepository implements $ClassPrefixDataSource {
+
+    private $ClassPrefixDataSource remoteDataSource;
+
+    public $ClassPrefixRepository() {
+        this.remoteDataSource = new $ClassPrefixRemoteDataSource();
+    }
+
+    public void get$MethodName(int pageSize, int pageIndex,BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
+        remoteDataSource.get$MethodName(pageSize,pageIndex,callback);
+    }
+
+}

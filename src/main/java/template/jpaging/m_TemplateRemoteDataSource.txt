@@ -1,0 +1,30 @@
+package $ClassPackageName;
+
+
+import android.support.annotation.NonNull;
+
+import com.foryou.coreui.paging.BaseDataSource;
+import com.foryou.coreui.paging.PagingBasePageDataSource;
+import com.foryou.net.FoYoNet;
+import com.foryou.net.callback.ISuccess;
+import com.foryou.net.http.IMethod;
+import $ClassPackageName.$ClassPrefixEntity;
+import $ClassPackageName.$ClassPrefixService;
+import java.util.List;
+
+public class $ClassPrefixRemoteDataSource extends PagingBasePageDataSource<$ClassPrefixEntity.DataBean> {
+
+    @Override
+    public void loadData(int pageIndex, int pageSize, @NonNull BaseDataSource.GetTaskCallback<List<$ClassPrefixEntity.DataBean>> callback) {
+        FoYoNet.builder()
+                .params("pageIndex", pageIndex)
+                .params("pageSize", pageSize)
+                .service($ClassPrefixService.class)
+                .method((IMethod<$ClassPrefixService>) $ClassPrefixService::get$MethodName)
+                .success((ISuccess<$ClassPrefixEntity>) result -> callback.onTaskLoaded(result.data))
+                .failure(callback::onDataNotAvailable)
+                .build()
+                .excute();
+
+    }
+}

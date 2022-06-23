@@ -1,0 +1,12 @@
+package $ClassPackageName
+
+import $ClassPackageName.$ClassPrefixEntity
+import com.foryou.net.base.BaseDataSource
+
+
+interface $ClassPrefixDataSource {
+
+    fun get$MethodName(pageSize: Int, pageIndex: Int,callback:BaseDataSource.GetTaskCallback<$ClassPrefixEntity>)
+
+}
+

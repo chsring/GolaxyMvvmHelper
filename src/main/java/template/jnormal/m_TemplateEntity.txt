@@ -1,0 +1,14 @@
+package $ClassPackageName;
+
+import com.srwing.b_applib.BaseEntity;
+import java.util.List;
+
+
+public class $ClassPrefixEntity extends BaseEntity {
+
+    public List<DataBean> data;
+
+    public static class DataBean {
+
+    }
+}

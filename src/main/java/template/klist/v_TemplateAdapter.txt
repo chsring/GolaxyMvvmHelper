@@ -1,0 +1,19 @@
+package $ClassPackageName
+
+import com.foryou.coreui.paging.PagingBaseAdapter
+import $V_MPackageName.$ClassPrefixEntity
+import $ModulePackName.R
+import com.chad.library.adapter.base.BaseViewHolder
+import $ModulePackName.databinding.$BindingPrefixItem$BindingMiddleBinding
+import com.foryou.coreui.adapter.FYBaseRLAdapter
+import android.content.Context
+
+
+class $ClassPrefixAdapter(val mContext: Context?) : FYBaseRLAdapter<$ClassPrefixEntity.DataBean, BaseViewHolder>(R.layout.$LayoutPrefix_item_$LayoutSuffix) {
+
+
+     override fun convert(helper:BaseViewHolder, item:$ClassPrefixEntity.DataBean) {
+          //TODO  insert you code
+     }
+
+}

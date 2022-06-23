@@ -1,0 +1,11 @@
+package $ClassPackageName
+
+import $ClassPackageName.$ClassPrefixEntity
+import com.foryou.net.base.BaseDataSource
+
+
+interface $ClassPrefixDataSource {
+
+    fun get$MethodName(callback:BaseDataSource.GetTaskCallback<$ClassPrefixEntity>)
+
+}

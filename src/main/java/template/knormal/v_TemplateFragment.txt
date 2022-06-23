@@ -1,0 +1,39 @@
+package $ClassPackageName
+
+import android.arch.lifecycle.Observer
+import android.os.Bundle
+import com.foryou.coreui.baseui.MvvMBaseFragment;
+import $ModulePackName.R;
+import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding;
+import $V_VMPackageName.$ClassPrefixViewModel;
+
+class $ClassPrefixFragment: MvvMBaseFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel>() {
+
+    companion object {
+        fun newInstance(orderSn: String): $ClassPrefixFragment {
+           /* val args = Bundle()
+              args.putString("orderSn", orderSn)
+              val fragment = KmRecordFragment()
+              fragment.arguments = args
+              return fragment*/
+            return $ClassPrefixFragment()
+        }
+     }
+
+    override fun getLayoutId(): Int {
+        return R.layout.$LayoutPrefix_fragment_$LayoutSuffix
+     }
+
+
+    override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState);
+        viewModel.liveData.observe(this, Observer {
+            dataBinding.bean = it
+            it?.apply {
+                // TODO  somethings
+            }
+        })
+        viewModel.get$MethodName();
+    }
+
+}

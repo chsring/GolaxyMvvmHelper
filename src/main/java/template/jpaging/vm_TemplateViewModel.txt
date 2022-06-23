@@ -1,0 +1,27 @@
+package $ClassPackageName;
+
+import android.app.Application;
+import android.support.annotation.NonNull;
+import com.foryou.net.base.BaseDataSource;
+import com.foryou.corelib.util.ToastUtils;
+import $VM_MPackageName.$ClassPrefixEntity;
+import $VM_MPackageName.$ClassPrefixRemoteDataSource;
+
+import com.foryou.coreui.paging.PagingBaseViewModel;
+
+
+public class $ClassPrefixViewModel extends PagingBaseViewModel<$ClassPrefixEntity.DataBean> {
+
+    public $ClassPrefixViewModel(@NonNull Application application) {
+        super(application);
+    }
+
+
+    public void get$MethodName() {
+        launch(new $ClassPrefixRemoteDataSource());
+    }
+
+    public void refresh() {
+        doRefresh();
+    }
+}

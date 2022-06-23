@@ -1,0 +1,11 @@
+package $ClassPackageName;
+
+import $ClassPackageName.$ClassPrefixEntity;
+import com.srwing.t_network.base.BaseDataSource;
+
+
+interface $ClassPrefixDataSource {
+
+    void get$MethodName(BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback);
+
+}

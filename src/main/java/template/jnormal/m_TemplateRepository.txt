@@ -1,0 +1,19 @@
+package $ClassPackageName;
+
+import $ClassPackageName.$ClassPrefixEntity;
+import $ClassPackageName.$ClassPrefixDataSource;
+import com.srwing.t_network.base.BaseDataSource;
+
+public class $ClassPrefixRepository implements $ClassPrefixDataSource {
+
+    private $ClassPrefixDataSource remoteDataSource;
+
+    public $ClassPrefixRepository() {
+        this.remoteDataSource = new $ClassPrefixRemoteDataSource();
+    }
+
+    public void get$MethodName(BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
+        remoteDataSource.get$MethodName(callback);
+    }
+
+}

@@ -1,0 +1,14 @@
+package $ClassPackageName
+
+import $ClassPackageName.$ClassPrefixEntity
+import $ClassPackageName.$ClassPrefixDataSource
+import com.foryou.net.base.BaseDataSource
+
+class $ClassPrefixRepository : $ClassPrefixDataSource {
+
+    private val remoteSource by lazy { $ClassPrefixRemoteDataSource() }
+
+    override fun get$MethodName(callback:BaseDataSource.GetTaskCallback<$ClassPrefixEntity>) {
+        remoteSource.get$MethodName(callback)
+    }
+}
