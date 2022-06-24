@@ -2,8 +2,8 @@ package $ClassPackageName;
 
 import android.app.Application;
 
-import android.support.annotation.NonNull;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
 
 import com.srwing.coreui.BaseViewModel;
 import com.srwing.t_network.base.BaseDataSource;

@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.srwing.plugin.mvvm</id>
     <name>GolaxyHelper</name>
-    <version>0.1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <vendor email="694177407@qq.com" url="https://github.com/chsring/GolaxyMvvmHelper.git">Golaxy</vendor>
 
     <description><![CDATA[
@@ -9,10 +9,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
-        0.1.0 Support Generate java code template，only support mvvm(jnormal) model，next I will continue to update new features
+        1.0-SNAPSHOT Support Generate java code template，only support mvvm(jnormal) model，next I will continue to update new features
     ]]>
     </change-notes>
-    <idea-version since-build="173.0"/>
+    <idea-version since-build="173.0" />
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
