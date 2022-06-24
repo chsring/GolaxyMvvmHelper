@@ -72,7 +72,7 @@ public class ParamBean {
                 this.tempFiles = TemplateUtils.kPagingFragmentFiles;
                 break;
         }
-        if (tempDir.contains("/template/j")) {
+        if (tempDir.startsWith("/j")) {
             suffix = ".java";
         } else {
             suffix = ".kt";

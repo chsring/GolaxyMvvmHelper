@@ -326,7 +326,7 @@ public class TemplateUtils {
         try {
             DocumentBuilder db = dbf.newDocumentBuilder();
             String basePath =  project.getBasePath();
-            String pathLocal = basePath /*+ "/" + mName*/ + "/src/main/AndroidManifest.xml";
+            String pathLocal = basePath + "/" + mName + "/src/main/AndroidManifest.xml";
             Document doc = db.parse(pathLocal);
             NodeList nodeList = doc.getElementsByTagName("manifest");
 
