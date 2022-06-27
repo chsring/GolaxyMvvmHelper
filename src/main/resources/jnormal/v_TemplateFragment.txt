@@ -3,7 +3,7 @@ package $ClassPackageName;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-import com.srwing.coreui.MvvmBindingFragment;
+import com.srwing.b_applib.coreui.MvvmBindingFragment;
 import $ModulePackName.R;
 import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding;
 import $V_VMPackageName.$ClassPrefixViewModel;

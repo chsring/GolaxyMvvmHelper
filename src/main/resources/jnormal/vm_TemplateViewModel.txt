@@ -5,7 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
-import com.srwing.coreui.BaseViewModel;
+import com.srwing.b_applib.coreui.BaseViewModel;
 import com.srwing.t_network.base.BaseDataSource;
 
 import com.blankj.utilcode.util.ToastUtils;
