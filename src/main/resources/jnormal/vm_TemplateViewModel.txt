@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
+import com.blankj.utilcode.util.CollectionUtils;
 import com.srwing.b_applib.coreui.BaseViewModel;
 import com.srwing.t_network.base.BaseDataSource;
 
@@ -32,7 +33,7 @@ public class $ClassPrefixViewModel extends BaseViewModel {
         repository.get$MethodName(new BaseDataSource.GetTaskCallback<$ClassPrefixEntity>(){
                @Override
                public void onTaskLoaded($ClassPrefixEntity task) {
-                   if (task.status.code == 0 && task.data != null && !task.data.isEmpty()) {
+                   if (task!=null && task.code == 0 && CollectionUtils.isEmpty(task.data)) {
                        liveData.setValue(task.data.get(0));
                    }
                }
