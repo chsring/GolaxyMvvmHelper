@@ -13,6 +13,7 @@ import com.blankj.utilcode.util.ToastUtils;
 
 import $VM_MPackageName.$ClassPrefixEntity;
 import $VM_MPackageName.$ClassPrefixRepository;
+import com.srwing.t_network.http.CorrCode;
 
 public class $ClassPrefixViewModel extends BaseViewModel {
 
@@ -33,8 +34,8 @@ public class $ClassPrefixViewModel extends BaseViewModel {
         repository.get$MethodName(new BaseDataSource.GetTaskCallback<$ClassPrefixEntity>(){
                @Override
                public void onTaskLoaded($ClassPrefixEntity task) {
-                   if (task!=null && task.code == 0 && CollectionUtils.isEmpty(task.data)) {
-                       liveData.setValue(task.data.get(0));
+                   if (task!=null && task.code == CorrCode.CODE_CORRECT.code && CollectionUtils.isEmpty(task.data)) {
+                       liveData.setValue(task.data);
                    }
                }
                @Override
