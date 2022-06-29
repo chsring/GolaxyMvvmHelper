@@ -34,7 +34,7 @@ public class $ClassPrefixViewModel extends BaseViewModel {
         repository.get$MethodName(new BaseDataSource.GetTaskCallback<$ClassPrefixEntity>(){
                @Override
                public void onTaskLoaded($ClassPrefixEntity task) {
-                   if (task!=null && task.code == CorrCode.CODE_CORRECT.code && CollectionUtils.isEmpty(task.data)) {
+                   if (task!=null && task.code == CorrCode.CODE_CORRECT.code && !CollectionUtils.isEmpty(task.data)) {
                        liveData.setValue(task.data);
                    }
                }
