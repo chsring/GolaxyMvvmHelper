@@ -27,7 +27,7 @@ public class $ClassPrefixViewModel extends BaseViewModel {
 
     public $ClassPrefixViewModel(@NonNull Application application) {
         super(application);
-        repository = new $ClassPrefixRepository();
+        repository = new $ClassPrefixRepository(this);
     }
 
     public void get$MethodName() {
@@ -35,7 +35,7 @@ public class $ClassPrefixViewModel extends BaseViewModel {
                @Override
                public void onTaskLoaded($ClassPrefixEntity task) {
                    if (task!=null && task.code == CorrCode.CODE_CORRECT.code && !CollectionUtils.isEmpty(task.data)) {
-                       liveData.setValue(task.data);
+                       liveData.setValue();
                    }
                }
                @Override

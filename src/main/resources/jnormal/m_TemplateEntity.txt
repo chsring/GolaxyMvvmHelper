@@ -6,7 +6,7 @@ import java.util.List;
 
 public class $ClassPrefixEntity extends BaseEntity {
 
-    public List<DataBean> data;
+    public DataBean data;
 
     public static class DataBean {
 

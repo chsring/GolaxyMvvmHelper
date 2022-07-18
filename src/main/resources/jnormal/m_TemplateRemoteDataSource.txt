@@ -3,17 +3,24 @@ package $ClassPackageName;
 import $ClassPackageName.$ClassPrefixEntity;
 import $ClassPackageName.$ClassPrefixService;
 import $ClassPackageName.$ClassPrefixDataSource;
+import com.srwing.b_applib.coreui.LifeDataSource;
 import com.srwing.t_network.GxyNet;
 import com.srwing.t_network.base.BaseDataSource;
 import com.srwing.t_network.callback.ISuccess;
 import com.srwing.t_network.http.IMethod;
+import com.trello.rxlifecycle4.LifecycleProvider;
 
-public class $ClassPrefixRemoteDataSource implements $ClassPrefixDataSource {
+public class $ClassPrefixRemoteDataSource extends LifeDataSource implements $ClassPrefixDataSource {
+
+        public $ClassPrefixRemoteDataSource(LifecycleProvider lifecycleProvider) {
+            super(lifecycleProvider);
+        }
 
     @Override
     public void get$MethodName(BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
         GxyNet.builder()
                 .service($ClassPrefixService.class)
+                .bindLifeCycle(lifecycleProvider)
                 .method((IMethod<$ClassPrefixService>) $ClassPrefixService::get$MethodName)
                 .success((ISuccess<$ClassPrefixEntity>) callback::onTaskLoaded)
                 .failure((callback::onDataNotAvailable))

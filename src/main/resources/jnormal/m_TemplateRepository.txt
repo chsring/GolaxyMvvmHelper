@@ -3,13 +3,14 @@ package $ClassPackageName;
 import $ClassPackageName.$ClassPrefixEntity;
 import $ClassPackageName.$ClassPrefixDataSource;
 import com.srwing.t_network.base.BaseDataSource;
+import com.trello.rxlifecycle4.LifecycleProvider;
 
 public class $ClassPrefixRepository implements $ClassPrefixDataSource {
 
     private $ClassPrefixDataSource remoteDataSource;
 
-    public $ClassPrefixRepository() {
-        this.remoteDataSource = new $ClassPrefixRemoteDataSource();
+    public $ClassPrefixRepository(LifecycleProvider provider) {
+        this.remoteDataSource = new $ClassPrefixRemoteDataSource(provider);
     }
 
     public void get$MethodName(BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
