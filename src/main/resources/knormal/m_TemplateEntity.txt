@@ -2,7 +2,7 @@ package $ClassPackageName
 
 import com.srwing.b_applib.BaseEntity
 
-data class $ClassPrefixEntity(val data: DataBean) : FoYoBaseEntity() {
+data class $ClassPrefixEntity(val data: DataBean) : BaseEntity() {
 
      data class DataBean(val param:String)
 

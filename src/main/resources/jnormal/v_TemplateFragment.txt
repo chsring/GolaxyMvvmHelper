@@ -8,7 +8,7 @@ import $ModulePackName.R;
 import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding;
 import $V_VMPackageName.$ClassPrefixViewModel;
 
-public class $ClassPrefixFragment extends MvvMBaseFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel> {
+public class $ClassPrefixFragment extends MvvmBindingFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel> {
 
     public static $ClassPrefixFragment newInstance() {
          /**

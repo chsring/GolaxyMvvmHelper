@@ -7,18 +7,17 @@
 
         <variable
                 name="bean"
-                type="$BaseDirPackName.$CreatePackName.m.$ClassPrefixEntity.DataBean"/>
+                type="$BaseDirPackName.$CreatePackName.m.$ClassPrefixEntity"/>
 
         <import type="android.view.View"/>
 
         <import type="android.text.TextUtils"/>
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
