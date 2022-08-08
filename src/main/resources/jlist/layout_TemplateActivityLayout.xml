@@ -4,11 +4,6 @@
 
     <data></data>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/srl_refresh_layout"
             android:layout_width="match_parent"
@@ -18,8 +13,7 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
-    </LinearLayout>
 </layout>
