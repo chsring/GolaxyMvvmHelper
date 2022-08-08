@@ -12,7 +12,7 @@ public class $ClassPrefixRemoteDataSource implements $ClassPrefixDataSource {
 
     @Override
     public void get$MethodName(int pageIndex , int pageSize,BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
-        FoYoNet.builder()
+        GxyNet.builder()
                 .params("pageSize", pageSize)
                 .params("pageIndex", pageIndex)
                 .service($ClassPrefixService.class)
