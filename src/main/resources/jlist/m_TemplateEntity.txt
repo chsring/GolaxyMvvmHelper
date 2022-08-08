@@ -1,10 +1,10 @@
 package $ClassPackageName;
 
-import com.foryou.corelib.entity.FoYoBaseEntity;
+import com.srwing.b_applib.BaseEntity;
 import java.util.List;
 
 
-public class $ClassPrefixEntity extends FoYoBaseEntity {
+public class $ClassPrefixEntity extends BaseEntity {
 
     public List<DataBean> data;
 

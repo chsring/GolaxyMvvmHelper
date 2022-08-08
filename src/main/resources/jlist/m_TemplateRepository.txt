@@ -2,7 +2,7 @@ package $ClassPackageName;
 
 import $ClassPackageName.$ClassPrefixEntity;
 import $ClassPackageName.$ClassPrefixDataSource;
-import com.foryou.net.base.BaseDataSource;
+import com.srwing.t_network.base.BaseDataSource;
 
 public class $ClassPrefixRepository implements $ClassPrefixDataSource {
 
@@ -12,8 +12,8 @@ public class $ClassPrefixRepository implements $ClassPrefixDataSource {
         this.remoteDataSource = new $ClassPrefixRemoteDataSource();
     }
 
-    public void get$MethodName(int pageSize, int pageIndex,BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
-        remoteDataSource.get$MethodName(pageSize,pageIndex,callback);
+    public void get$MethodName(int pageIndex , int pageSize,BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
+        remoteDataSource.get$MethodName(pageIndex, pageSize,callback);
     }
 
 }

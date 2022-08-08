@@ -1,13 +1,15 @@
 package $ClassPackageName;
 
 import android.app.Application;
-import android.arch.lifecycle.MutableLiveData;
-import android.support.annotation.NonNull;
-import com.foryou.coreui.baseui.BaseViewModel;
-import com.foryou.net.base.BaseDataSource;
-import com.foryou.corelib.util.ToastUtils;
+import androidx.lifecycle.MutableLiveData;
+import androidx.annotation.NonNull;
+import com.srwing.b_applib.coreui.BaseViewModel;
+import com.srwing.t_network.base.BaseDataSource;
+import com.blankj.utilcode.util.ToastUtils;
 import $VM_MPackageName.$ClassPrefixEntity;
 import $VM_MPackageName.$ClassPrefixRepository;
+import com.srwing.t_network.http.CorrCode;
+import android.text.TextUtils;
 import java.util.List;
 
 public class $ClassPrefixViewModel extends BaseViewModel {
@@ -25,17 +27,24 @@ public class $ClassPrefixViewModel extends BaseViewModel {
         repository = new $ClassPrefixRepository();
     }
 
-    public void get$MethodName(int pageSize, int pageIndex) {
-        repository.get$MethodName(pageSize,pageIndex,new BaseDataSource.GetTaskCallback<$ClassPrefixEntity>(){
+    public void get$MethodName(int pageIndex, int pageSize) {
+        repository.get$MethodName(pageIndex,pageSize,new BaseDataSource.GetTaskCallback<$ClassPrefixEntity>(){
                @Override
                public void onTaskLoaded($ClassPrefixEntity task) {
-                   if (task.status.code == 0) {
-                       liveData.setValue(task.data);
-                   }
+                     if (task != null) {
+                          if (task.code == CorrCode.CODE_CORRECT.code) {
+
+                          } else if (!TextUtils.isEmpty(task.msg)) {
+                               ToastUtils.showShort(task.msg);
+                          }
+                     }
+                     if (task.code == 0) {
+                          liveData.setValue(task.data);
+                     }
                }
                @Override
                public void onDataNotAvailable(int code, String desc) {
-                   ToastUtils.toastShort(desc);
+                   ToastUtils.showShort(desc);
                }
         });
      }

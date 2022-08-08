@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <data>
-
-        <variable
-                name="item"
-                type="$BaseDirPackName.$CreatePackName.m.$ClassPrefixEntity.DataBean"/>
-
-        <import type="android.view.View"/>
-
-        <import type="android.text.TextUtils"/>
-    </data>
-
-    <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-    </android.support.constraint.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>

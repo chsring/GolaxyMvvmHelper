@@ -3,15 +3,15 @@ package $ClassPackageName;
 import $ClassPackageName.$ClassPrefixEntity;
 import $ClassPackageName.$ClassPrefixService;
 import $ClassPackageName.$ClassPrefixDataSource;
-import com.foryou.net.FoYoNet;
-import com.foryou.net.base.BaseDataSource;
-import com.foryou.net.callback.ISuccess;
-import com.foryou.net.http.IMethod;
+import com.srwing.t_network.GxyNet;
+import com.srwing.t_network.base.BaseDataSource;
+import com.srwing.t_network.callback.ISuccess;
+import com.srwing.t_network.http.IMethod;
 
 public class $ClassPrefixRemoteDataSource implements $ClassPrefixDataSource {
 
     @Override
-    public void get$MethodName(int pageSize, int pageIndex,BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
+    public void get$MethodName(int pageIndex , int pageSize,BaseDataSource.GetTaskCallback<$ClassPrefixEntity> callback) {
         FoYoNet.builder()
                 .params("pageSize", pageSize)
                 .params("pageIndex", pageIndex)

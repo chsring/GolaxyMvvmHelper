@@ -1,15 +1,13 @@
 package $ClassPackageName;
 
-import com.foryou.coreui.paging.PagingBaseAdapter;
 import $V_MPackageName.$ClassPrefixEntity;
 import $ModulePackName.R;
-import com.chad.library.adapter.base.BaseViewHolder;
-import $ModulePackName.databinding.$BindingPrefixItem$BindingMiddleBinding;
-import com.foryou.coreui.adapter.FYBaseRLAdapter;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.srwing.b_applib.recycle_adapter.adapter.qadapter.QuickRefreshLoadAdapter;
 import android.content.Context;
 
 
-public class $ClassPrefixAdapter extends FYBaseRLAdapter<$ClassPrefixEntity.DataBean, BaseViewHolder> {
+public class $ClassPrefixAdapter extends QuickRefreshLoadAdapter<$ClassPrefixEntity.DataBean, BaseViewHolder> {
     private Context mContext;
 
     public $ClassPrefixAdapter(Context context) {
