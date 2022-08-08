@@ -1,13 +1,14 @@
 package $ClassPackageName
 
-import android.arch.lifecycle.Observer
 import android.os.Bundle
-import com.foryou.coreui.baseui.MvvMBaseFragment;
-import $ModulePackName.R;
-import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding;
-import $V_VMPackageName.$ClassPrefixViewModel;
+import androidx.lifecycle.Observer
+import com.srwing.b_applib.coreui.mvvm.MvvmBindingFragment
+import $ModulePackName.R
+import android.view.View
+import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding
+import $V_VMPackageName.$ClassPrefixViewModel
 
-class $ClassPrefixFragment: MvvMBaseFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel>() {
+class $ClassPrefixFragment: MvvmBindingFragment<$BindingPrefixFragment$BindingMiddleBinding, $ClassPrefixViewModel>() {
 
     companion object {
         fun newInstance(orderSn: String): $ClassPrefixFragment {
@@ -27,7 +28,7 @@ class $ClassPrefixFragment: MvvMBaseFragment<$BindingPrefixFragment$BindingMiddl
 
     override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel.liveData.observe(this, Observer {
+        viewModel.liveData.observe(viewLifecycleOwner, Observer {
             dataBinding.bean = it
             it?.apply {
                 // TODO  somethings

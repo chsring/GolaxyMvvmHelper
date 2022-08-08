@@ -1,8 +1,8 @@
 package $ClassPackageName
 
-import com.foryou.corelib.entity.FoYoBaseEntity
+import com.srwing.b_applib.BaseEntity
 
-data class $ClassPrefixEntity(val data: List<DataBean>?) : FoYoBaseEntity() {
+data class $ClassPrefixEntity(val data: DataBean) : FoYoBaseEntity() {
 
      data class DataBean(val param:String)
 

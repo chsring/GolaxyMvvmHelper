@@ -1,11 +1,11 @@
 package $ClassPackageName
 
 import $ClassPackageName.$ClassPrefixEntity
-import java.util.WeakHashMap
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
+import java.util.*
 
 interface $ClassPrefixService {
 

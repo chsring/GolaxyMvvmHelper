@@ -1,7 +1,7 @@
 package $ClassPackageName
 
 import $ClassPackageName.$ClassPrefixEntity
-import com.foryou.net.base.BaseDataSource
+import com.srwing.t_network.base.BaseDataSource
 
 
 interface $ClassPrefixDataSource {

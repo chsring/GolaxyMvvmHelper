@@ -3,22 +3,20 @@ package $ClassPackageName
 import $ClassPackageName.$ClassPrefixEntity
 import $ClassPackageName.$ClassPrefixService
 import $ClassPackageName.$ClassPrefixDataSource
-import com.foryou.net.FoYoNet
-import com.foryou.net.base.BaseDataSource
-import com.foryou.net.callback.ISuccess
-import com.foryou.net.callback.IFailure
-import com.foryou.net.http.IMethod
+import com.srwing.t_network.GxyNet
+import com.srwing.t_network.base.BaseDataSource
+import com.srwing.t_network.callback.IFailure
+import com.srwing.t_network.callback.ISuccess
 
 class $ClassPrefixRemoteDataSource : $ClassPrefixDataSource {
 
 
-   override fun  get$MethodName(callback: BaseDataSource.GetTaskCallback<$ClassPrefixEntity>) {
-        FoYoNet.builder()
-                .service($ClassPrefixService::class.java)
+   override fun  get$MethodName(callback: BaseDataSource.GetTaskCallback<$ClassPrefixEntity>) = GxyNet.builder()
+        .service($ClassPrefixService::class.java)
                 .method{ service, params -> (service as $ClassPrefixService).get$MethodName(params) }
                 .success(ISuccess<$ClassPrefixEntity> { callback.onTaskLoaded(it) })
                 .failure(IFailure { code, desc -> callback.onDataNotAvailable(code, desc) })
                 .build()
-                .excute()
-    }
+                .excute<$ClassPrefixEntity>()
+
 }

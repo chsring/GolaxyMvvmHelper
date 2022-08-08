@@ -1,9 +1,9 @@
 package $ClassPackageName;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
-import com.srwing.b_applib.coreui.MvvmBindingFragment;
+import com.srwing.b_applib.coreui.mvvm.MvvmBindingFragment;
 import $ModulePackName.R;
 import $ModulePackName.databinding.$BindingPrefixFragment$BindingMiddleBinding;
 import $V_VMPackageName.$ClassPrefixViewModel;

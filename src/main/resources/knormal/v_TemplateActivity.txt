@@ -1,13 +1,13 @@
 package $ClassPackageName
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import com.foryou.coreui.baseui.MvvMBaseActivity
+import com.srwing.b_applib.coreui.mvvm.MvvmBindingActivity
 import $ModulePackName.R
 import $ModulePackName.databinding.$BindingPrefixActivity$BindingMiddleBinding
 import $V_VMPackageName.$ClassPrefixViewModel
 
-class $ClassPrefixActivity: MvvMBaseActivity<$BindingPrefixActivity$BindingMiddleBinding, $ClassPrefixViewModel>() {
+class $ClassPrefixActivity: MvvmBindingActivity<$BindingPrefixActivity$BindingMiddleBinding, $ClassPrefixViewModel>() {
 
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);

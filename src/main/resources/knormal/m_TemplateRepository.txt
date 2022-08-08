@@ -2,7 +2,7 @@ package $ClassPackageName
 
 import $ClassPackageName.$ClassPrefixEntity
 import $ClassPackageName.$ClassPrefixDataSource
-import com.foryou.net.base.BaseDataSource
+import com.srwing.t_network.base.BaseDataSource
 
 class $ClassPrefixRepository : $ClassPrefixDataSource {
 
