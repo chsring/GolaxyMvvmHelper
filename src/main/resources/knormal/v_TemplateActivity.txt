@@ -9,16 +9,18 @@ import $V_VMPackageName.$ClassPrefixViewModel
 
 class $ClassPrefixActivity: MvvmBindingActivity<$BindingPrefixActivity$BindingMiddleBinding, $ClassPrefixViewModel>() {
 
-     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.$LayoutPrefix_activity_$LayoutSuffix);
-        setTitle("");//TODO  somethings
-        viewModel.liveData.observe(this, Observer {
-            dataBinding.bean = it
-            it?.apply {
-                // TODO  somethings
-            }
-        })
-        viewModel.get$MethodName();
+    override fun getContentView(): Int {
+            return R.layout.$LayoutPrefix_activity_$LayoutSuffix
+    }
+
+    override fun initViewData() {
+    setTitle("");//TODO  somethings
+            viewModel.liveData.observe(this, Observer {
+                dataBinding.bean = it
+                it?.apply {
+                    // TODO  somethings
+                }
+            })
+            viewModel.get$MethodName();
     }
 }

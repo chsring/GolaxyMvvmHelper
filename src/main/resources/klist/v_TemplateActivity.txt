@@ -13,9 +13,11 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 
 class $ClassPrefixActivity: MvvMBaseActivity<$BindingPrefixActivity$BindingMiddleBinding, $ClassPrefixViewModel>() , FYBaseRLAdapter.OnLoadRefreshFinish {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.$LayoutPrefix_activity_$LayoutSuffix)
+    override fun getContentView(): Int {
+        return R.layout.$LayoutPrefix_activity_$LayoutSuffix
+    }
+
+    override fun initViewData() {
         setTitle("")//TODO
         val adapter = $ClassPrefixAdapter(this)
         adapter.setOnLoadRefreshFinish(this)

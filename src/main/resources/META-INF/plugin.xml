@@ -33,6 +33,7 @@
         <!--      <add-to-group group-id="NewGroup" anchor="first"/>-->
         <!--    </action>-->
     </actions>
+    <!-- 如果此处依赖报红，点击右上角的循环按钮，reload一下  -->
     <depends>com.intellij.modules.java</depends>
 
 </idea-plugin>
